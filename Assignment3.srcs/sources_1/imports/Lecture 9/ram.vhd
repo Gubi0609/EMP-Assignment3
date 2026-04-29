@@ -5,16 +5,16 @@ use IEEE.std_logic_arith.all;
 entity RAM_16_4 is
     port(
         addr : in  std_logic_vector(3 downto 0);
-        din  : in  std_logic_vector(3 downto 0);
+        din  : in  std_logic_vector(7 downto 0);
         wr   : in  std_logic;
         clk  : in  std_logic;
-        dout : out std_logic_vector(3 downto 0)
+        dout : out std_logic_vector(7 downto 0)
     );
 end RAM_16_4;
 
 architecture Behavioral of RAM_16_4 is
 
-    type mem_type is array (0 to 15) of std_logic_vector(3 downto 0);
+    type mem_type is array (0 to 15) of std_logic_vector(7 downto 0);
     signal mem : mem_type;
 
     signal addr_reg : std_logic_vector(3 downto 0);
