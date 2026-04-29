@@ -1,13 +1,14 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xC4A5837210A606E5",
+      "boundary_crc": "0xC4A58372F999210C",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../Assignment3.gen/sources_1/bd/UART_w_RAM",
       "name": "UART_w_RAM",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2025.2"
+      "tool_version": "2025.2",
+      "validated": "true"
     },
     "design_tree": {
       "clk_divider_0": "",
@@ -27,14 +28,44 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "btn_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "UART_w_RAM_sysclk",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "100000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
           }
         }
       },
       "btn_0": {
         "type": "rst",
-        "direction": "I"
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
       }
     },
     "components": {
@@ -58,6 +89,14 @@
               "ASSOCIATED_RESET": {
                 "value": "rst",
                 "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "UART_w_RAM_sysclk",
+                "value_src": "default_prop"
               }
             }
           },
@@ -126,6 +165,14 @@
               "ASSOCIATED_RESET": {
                 "value": "rst",
                 "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "UART_w_RAM_sysclk",
+                "value_src": "default_prop"
               }
             }
           },
@@ -307,7 +354,8 @@
           "btn_0",
           "rx_mod_0/rst",
           "clk_divider_0/rst",
-          "ram_ctrl_0/rst"
+          "ram_ctrl_0/rst",
+          "tx_mod_0/rst"
         ]
       },
       "rx_mod_0_data_out": {
