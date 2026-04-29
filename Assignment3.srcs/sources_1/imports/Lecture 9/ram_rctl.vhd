@@ -29,6 +29,13 @@ architecture fsm of ram_ctrl is
     constant TERMINATOR : std_logic_vector(7 downto 0) := x"0D";  -- carriage return
 
     type STATE_TYPE is (s0, s1, s2, s3, s4);
+     
+    -- s0 = IDLE
+    -- s1 = WRITING
+    -- s2 = wait/read
+    -- s3 = READING
+    -- s4 = tx wait (wait for tx to be ready to receive)
+
 
     attribute state_vector : string;
     attribute state_vector of fsm : architecture is "current_state";
