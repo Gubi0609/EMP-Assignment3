@@ -172,5 +172,3 @@ begin
     end process output;
 
 end fsm;
-message.txt
-6 KB
