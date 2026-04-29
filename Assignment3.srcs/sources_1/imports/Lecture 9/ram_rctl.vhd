@@ -54,7 +54,7 @@ begin
             msg_len       <= (others => '0');
             tx_buf        <= (others => '0');
 
-        elsif (clkfast'event and clkfast = '1') then
+        elsif (rising_edge(clkfast)) then
             current_state <= next_state;
 
             case current_state is
