@@ -1,13 +1,352 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x0",
+      "boundary_crc": "0x8DAFE3885E210A50",
+      "device": "xc7z020clg400-1",
       "gen_directory": "../../../../Assignment3.gen/sources_1/bd/UART_w_RAM",
       "name": "UART_w_RAM",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
       "tool_version": "2025.2"
     },
-    "design_tree": {}
+    "design_tree": {
+      "clk_divider_0": "",
+      "tx_mod_0": "",
+      "rx_mod_0": "",
+      "RAM_16_4_0": "",
+      "ram_ctrl_0": ""
+    },
+    "ports": {
+      "sout": {
+        "direction": "O"
+      },
+      "sin": {
+        "direction": "I"
+      },
+      "sysclk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "FREQ_HZ": {
+            "value": "100000000"
+          }
+        }
+      },
+      "rst": {
+        "type": "rst",
+        "direction": "I"
+      }
+    },
+    "components": {
+      "clk_divider_0": {
+        "vlnv": "xilinx.com:module_ref:clk_divider:1.0",
+        "ip_revision": "1",
+        "xci_name": "UART_w_RAM_clk_divider_0_0",
+        "xci_path": "ip/UART_w_RAM_clk_divider_0_0/UART_w_RAM_clk_divider_0_0.xci",
+        "inst_hier_path": "clk_divider_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "clk_divider",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk_div": {
+            "direction": "O"
+          }
+        }
+      },
+      "tx_mod_0": {
+        "vlnv": "xilinx.com:module_ref:tx_mod:1.0",
+        "ip_revision": "1",
+        "xci_name": "UART_w_RAM_tx_mod_0_0",
+        "xci_path": "ip/UART_w_RAM_tx_mod_0_0/UART_w_RAM_tx_mod_0_0.xci",
+        "inst_hier_path": "tx_mod_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "tx_mod",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clkfast": {
+            "direction": "I"
+          },
+          "data_in": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "shift_load": {
+            "direction": "I"
+          },
+          "sout": {
+            "direction": "O"
+          },
+          "xmitmt": {
+            "direction": "O"
+          }
+        }
+      },
+      "rx_mod_0": {
+        "vlnv": "xilinx.com:module_ref:rx_mod:1.0",
+        "ip_revision": "1",
+        "xci_name": "UART_w_RAM_rx_mod_0_0",
+        "xci_path": "ip/UART_w_RAM_rx_mod_0_0/UART_w_RAM_rx_mod_0_0.xci",
+        "inst_hier_path": "rx_mod_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "rx_mod",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "sin": {
+            "direction": "I"
+          },
+          "data_out": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "intr": {
+            "type": "intr",
+            "direction": "O",
+            "parameters": {
+              "SENSITIVITY": {
+                "value": "LEVEL_HIGH",
+                "value_src": "constant"
+              }
+            }
+          }
+        }
+      },
+      "RAM_16_4_0": {
+        "vlnv": "xilinx.com:module_ref:RAM_16_4:1.0",
+        "ip_revision": "1",
+        "xci_name": "UART_w_RAM_RAM_16_4_0_0",
+        "xci_path": "ip/UART_w_RAM_RAM_16_4_0_0/UART_w_RAM_RAM_16_4_0_0.xci",
+        "inst_hier_path": "RAM_16_4_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "RAM_16_4",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "addr": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "din": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "wr": {
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "dout": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "ram_ctrl_0": {
+        "vlnv": "xilinx.com:module_ref:ram_ctrl:1.0",
+        "ip_revision": "1",
+        "xci_name": "UART_w_RAM_ram_ctrl_0_0",
+        "xci_path": "ip/UART_w_RAM_ram_ctrl_0_0/UART_w_RAM_ram_ctrl_0_0.xci",
+        "inst_hier_path": "ram_ctrl_0",
+        "has_run_ip_tcl": "true",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ram_ctrl",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clkfast": {
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "intr": {
+            "type": "intr",
+            "direction": "I",
+            "parameters": {
+              "SENSITIVITY": {
+                "value": "LEVEL_HIGH",
+                "value_src": "constant"
+              }
+            }
+          },
+          "data_out": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "xmitmt": {
+            "direction": "I"
+          },
+          "data_in": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "shift_load": {
+            "direction": "O"
+          },
+          "addr": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "din": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "wr": {
+            "direction": "O"
+          },
+          "dout": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "RAM_16_4_0_dout": {
+        "ports": [
+          "RAM_16_4_0/dout",
+          "ram_ctrl_0/dout"
+        ]
+      },
+      "clk_divider_0_clk_div": {
+        "ports": [
+          "clk_divider_0/clk_div",
+          "tx_mod_0/clkfast",
+          "ram_ctrl_0/clkfast",
+          "RAM_16_4_0/clk"
+        ]
+      },
+      "ram_ctrl_0_addr": {
+        "ports": [
+          "ram_ctrl_0/addr",
+          "RAM_16_4_0/addr"
+        ]
+      },
+      "ram_ctrl_0_data_in": {
+        "ports": [
+          "ram_ctrl_0/data_in",
+          "tx_mod_0/data_in"
+        ]
+      },
+      "ram_ctrl_0_din": {
+        "ports": [
+          "ram_ctrl_0/din",
+          "RAM_16_4_0/din"
+        ]
+      },
+      "ram_ctrl_0_shift_load": {
+        "ports": [
+          "ram_ctrl_0/shift_load",
+          "tx_mod_0/shift_load"
+        ]
+      },
+      "ram_ctrl_0_wr": {
+        "ports": [
+          "ram_ctrl_0/wr",
+          "RAM_16_4_0/wr"
+        ]
+      },
+      "rst_1": {
+        "ports": [
+          "rst",
+          "rx_mod_0/rst",
+          "clk_divider_0/rst",
+          "ram_ctrl_0/rst"
+        ]
+      },
+      "rx_mod_0_data_out": {
+        "ports": [
+          "rx_mod_0/data_out",
+          "ram_ctrl_0/data_out"
+        ]
+      },
+      "rx_mod_0_intr": {
+        "ports": [
+          "rx_mod_0/intr",
+          "ram_ctrl_0/intr"
+        ]
+      },
+      "sin_1": {
+        "ports": [
+          "sin",
+          "rx_mod_0/sin"
+        ]
+      },
+      "sysclk_1": {
+        "ports": [
+          "sysclk",
+          "clk_divider_0/clk",
+          "rx_mod_0/clk"
+        ]
+      },
+      "tx_mod_0_sout": {
+        "ports": [
+          "tx_mod_0/sout",
+          "sout"
+        ]
+      },
+      "tx_mod_0_xmitmt": {
+        "ports": [
+          "tx_mod_0/xmitmt",
+          "ram_ctrl_0/xmitmt"
+        ]
+      }
+    }
   }
 }
