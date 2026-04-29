@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x8DAFE3885E210A50",
+      "boundary_crc": "0xC4A5837210A606E5",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../Assignment3.gen/sources_1/bd/UART_w_RAM",
       "name": "UART_w_RAM",
@@ -17,10 +17,10 @@
       "ram_ctrl_0": ""
     },
     "ports": {
-      "sout": {
+      "jb_1": {
         "direction": "O"
       },
-      "sin": {
+      "jb_0": {
         "direction": "I"
       },
       "sysclk": {
@@ -32,7 +32,7 @@
           }
         }
       },
-      "rst": {
+      "btn_0": {
         "type": "rst",
         "direction": "I"
       }
@@ -304,7 +304,7 @@
       },
       "rst_1": {
         "ports": [
-          "rst",
+          "btn_0",
           "rx_mod_0/rst",
           "clk_divider_0/rst",
           "ram_ctrl_0/rst"
@@ -324,7 +324,7 @@
       },
       "sin_1": {
         "ports": [
-          "sin",
+          "jb_0",
           "rx_mod_0/sin"
         ]
       },
@@ -338,7 +338,7 @@
       "tx_mod_0_sout": {
         "ports": [
           "tx_mod_0/sout",
-          "sout"
+          "jb_1"
         ]
       },
       "tx_mod_0_xmitmt": {
